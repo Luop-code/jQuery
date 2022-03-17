@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+
+    </ul>
+    <script>
+        $(function () {
+            // 1.单个事件注册
+            /*       $("div").click(function () {
+                      $(this).css("background", "blue")
+                  });
+                  $("div").mouseover(function () {
+                      $(this).css("background", "red");
+                  });
+       */
+            // 2.事件处理on,可绑定多个事件
+            $("div").on({
+                mouseenter: function () {
+                    $(this).css("background", "blue");
+                },
+                click: function () {
+                    $(this).css("background", "red");
+                },
+                mouseleave: function () {
+                    $(this).css("background", "green")
+                }
+            })
+
+            // on 可以实现事件委托
+            $("ul").on("click", "li", function () {
+                console.log(1);
+                // click是绑定在ul上的，但触发对象是ul里的li
+            })
+
+            // off()解绑
+            $("ul").off("click", "li");
+
+            // one()只触发1次事件
+            $("div").one("click", function () { })
+
+        })
+
+    </script>
+</body>
+
+</html>

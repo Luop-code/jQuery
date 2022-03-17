@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .current {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="current"></div>
+    <script>
+
+        /*      $(function () {
+                 console.log($('div').css('width'));
+                 // 属性必须加引号，值如果是数字可不跟单位和引号
+                 $('div').css('width', '300px')
+                 $('div').css({
+                     width: 400,
+                     height: 400,
+                     backgroundColor: 'skyblue'
+                 })
+             })
+      */
+        $(function () {
+            $('div').click(function () {
+                // $(this).addClass('current');
+                // $(this).removeClass('current');
+                $(this).toggleClass('current');
+            })
+        })
+    </script>
+</body>
+
+</html>
